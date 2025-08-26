@@ -85,7 +85,10 @@ export default function BlogDetail() {
             <h2 className="text-2xl font-medium text-gray-600">RELATED BLOG</h2>
             <div className="grid grid-cols-1 gap-10">
               {related.map((item) => (
-                <div className="p-8 shadow-[0_4px_20px_rgba(0_0,_0,_0.09)] rounded-3xl flex flex-col gap-4 max-[700px]:p-4">
+                <div
+                  key={item.id}
+                  className="p-8 shadow-[0_4px_20px_rgba(0_0,_0,_0.09)] rounded-3xl flex flex-col gap-4 max-[700px]:p-4"
+                >
                   {item.image && (
                     <Image
                       src={item.image}
