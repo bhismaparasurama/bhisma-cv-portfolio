@@ -1,0 +1,113 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+import Navbar from "@/app/components/Navbar";
+import { div } from "motion/react-client";
+
+interface Blog {
+  id: number;
+  title: string;
+  content: string;
+  image: string | null;
+  category: string;
+}
+
+export default function BlogDetail() {
+  const params = useParams();
+  const { id } = params;
+  const [blog, setBlog] = useState<Blog | null>(null);
+  const [related, setRelated] = useState<Blog[]>([]);
+
+  useEffect(() => {
+    if (id) {
+      // fetch detail blog
+      fetch(`http://127.0.0.1:8000/api/blogs/${id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          const currentBlog = data.data;
+          setBlog(currentBlog);
+
+          // fetch semua blog untuk cari related
+          fetch("http://127.0.0.1:8000/api/blogs")
+            .then((res) => res.json())
+            .then((all) => {
+              const relatedBlogs = all.data.filter(
+                (b: Blog) =>
+                  b.category === currentBlog.category && b.id !== currentBlog.id
+              );
+              setRelated(relatedBlogs);
+            });
+        })
+        .catch((err) => console.error("Error fetching blog:", err));
+    }
+  }, [id]);
+
+  if (!blog) return <p className="p-8">Loading...</p>;
+
+  return (
+    <div className="px-40 mt-[100px] flex flex-col gap-4 max-[1200px]:px-4">
+      <div>
+        <a
+          href="/blogs"
+          className="flex items-center gap-2 py-3 px-6 bg-blue-500 rounded-full text-white w-fit"
+        >
+          <i className="bx bx-arrow-left-stroke"></i>
+          Back
+        </a>
+      </div>
+      <div className="flex items-start gap-10 w-full max-[1000px]:flex-col">
+        <div className="w-[70%] shadow-[0_4px_20px_rgba(0_0,_0,_0.09)] p-8 flex gap-4 flex-col rounded-3xl max-[1000px]:w-full max-[1000px]:p-4">
+          {blog.image && (
+            <img
+              src={blog.image}
+              alt={blog.title}
+              className="w-full object-cover rounded-3xl"
+            />
+          )}
+          <h1 className="text-3xl font-medium max-[1000px]:text-lg">{blog.title}</h1>
+          <p className="py-3 px-6 bg-blue-500 w-fit rounded-full text-white flex items-center gap-2">
+            <i className="bx bx-grid-circle-diagonal-left"></i>
+            {blog.category}
+          </p>
+          <div
+            className="text-justify"
+            dangerouslySetInnerHTML={{ __html: blog.content }}
+          />
+        </div>
+        {/* Related Blogs */}
+        {related.length > 0 && (
+          <div className="w-[calc(30%-2.5rem)] flex flex-col gap-4 max-[1000px]:w-full">
+            <h2 className="text-2xl font-medium text-gray-600">RELATED BLOG</h2>
+            <div className="grid grid-cols-1 gap-10">
+              {related.map((item) => (
+                <div className="p-8 shadow-[0_4px_20px_rgba(0_0,_0,_0.09)] rounded-3xl flex flex-col gap-4 max-[700px]:p-4">
+                  {item.image && (
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full object-cover rounded-3xl"
+                    />
+                  )}
+                  <p className="py-2 px-4 bg-blue-500 text-white rounded-full w-fit flex items-center gap-2">
+                    <i className="bx bx-grid-circle-diagonal-left"></i>
+                    {item.category}
+                  </p>
+                  <h1 className="text-lg">{item.title}</h1>
+                  <a
+                    href={`/blogs/${item.id}`}
+                    key={item.id}
+                    className="flex items-center gap-2 py-2 px-4 bg-black text-white rounded-full w-fit mt-auto"
+                  >
+                    <i className="bx bx-arrow-in-up-right-circle"></i>
+                    Read Blog
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
