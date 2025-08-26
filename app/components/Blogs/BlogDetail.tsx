@@ -105,7 +105,6 @@ export default function BlogDetail() {
                   <h1 className="text-lg">{item.title}</h1>
                   <Link
                     href={`/blogs/${item.id}`}
-                    key={item.id}
                     className="flex items-center gap-2 py-2 px-4 bg-black text-white rounded-full w-fit mt-auto"
                   >
                     <i className="bx bx-arrow-in-up-right-circle"></i>
