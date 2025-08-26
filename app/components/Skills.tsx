@@ -1,10 +1,9 @@
-import { assets, skills, tools } from "@/assets/assets";
+import { skills, tools } from "@/assets/assets";
 import Image from "next/image";
 import React from "react";
 
-type Props = {};
 
-const Skills = (props: Props) => {
+const Skills = () => {
   return (
     <div id="skills" className="scroll-mt-[180px] px-40 flex flex-col mt-60 gap-10 max-[1200px]:px-4 max-[600px]:mt-20">
       <div>

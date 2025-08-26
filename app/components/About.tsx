@@ -4,9 +4,8 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
-type Props = {};
 
-const About = (props: Props) => {
+const About = () => {
   // Tambahkan state untuk slideshow
   const [currentIndex, setCurrentIndex] = useState(0);
 

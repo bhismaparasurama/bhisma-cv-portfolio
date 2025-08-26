@@ -1,43 +1,42 @@
+import Link from "next/link";
 import React from "react";
 
-type Props = {};
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
     <div className="px-40 p-8 flex bg-black flex-col items-center mt-60 gap-4 max-[1200px]:p-4 max-[600px]:mt-20">
       <div>
-        <a href="" className="text-4xl text-white max-[600px]:text-2xl">
+        <Link href="" className="text-4xl text-white max-[600px]:text-2xl">
           Bhisma <span className="text-blue-500">.</span>
-        </a>
+        </Link>
       </div>
       <div className="flex gap-8 justify-center max-[600px]:grid max-[600px]:grid-cols-3 max-[600px]:gap-4">
-        <a href="#" className="text-lg text-white max-[600px]:text-center">
+        <Link href="#" className="text-lg text-white max-[600px]:text-center">
           Home
-        </a>
-        <a href="#about" className="text-lg text-white max-[600px]:text-center">
+        </Link>
+        <Link href="#about" className="text-lg text-white max-[600px]:text-center">
           About
-        </a>
-        <a
+        </Link>
+        <Link
           href="#skills"
           className="text-lg text-white max-[600px]:text-center"
         >
           Skills
-        </a>
-        <a
+        </Link>
+        <Link
           href="#projects"
           className="text-lg text-white max-[600px]:text-center"
         >
           Project
-        </a>
-        <a href="#blogs" className="text-lg text-white max-[600px]:text-center">
+        </Link>
+        <Link href="#blogs" className="text-lg text-white max-[600px]:text-center">
           Blog
-        </a>
-        <a
+        </Link>
+        <Link
           href="#contact"
           className="text-lg text-white max-[600px]:text-center"
         >
           Contact
-        </a>
+        </Link>
       </div>
       <div>
         <h1 className="text-lg text-white text-center">

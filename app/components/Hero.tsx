@@ -3,9 +3,7 @@ import React, { useEffect, useState } from "react";
 
 const roles = ["Frontend Developer", "Backend Developer", "UI/UX Designer"];
 
-type Props = {};
-
-const Hero = (props: Props) => {
+const Hero = () => {
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(true);
 

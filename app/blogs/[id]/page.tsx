@@ -1,11 +1,10 @@
 "use client";
 
 import BlogDetail from "@/app/components/Blogs/BlogDetail";
+import Link from "next/link";
 import React, { useRef } from "react";
 
-type Props = {};
-
-const page = (props: Props) => {
+const Page = () => {
   const sideMenu = useRef<HTMLUListElement>(null);
 
   const openMenu = () => {
@@ -22,51 +21,51 @@ const page = (props: Props) => {
   return (
     <div>
       <nav className="w-full fixed top-0 right-0 left-0 px-40 py-4 flex items-center justify-between z-50 max-[1200px]:px-4 transition duration-300 bg-white shadow-sm">
-        <a href="" className="text-4xl font-semibold max-[600px]:text-2xl">
+        <Link href="" className="text-4xl font-semibold max-[600px]:text-2xl">
           Bhisma <span className="text-blue-500">.</span>
-        </a>
+        </Link>
 
         <ul className="flex items-center gap-10 max-[1024px]:hidden">
           <li>
-            <a href="/" className="">
+            <Link href="/" className="">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#about" className="">
+            <Link href="/#about" className="">
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#skills" className="">
+            <Link href="/#skills" className="">
               Skills
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#projects" className="">
+            <Link href="/#projects" className="">
               Project
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#blogs" className="">
+            <Link href="/#blogs" className="">
               Blog
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#contact" className="">
+            <Link href="/#contact" className="">
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
 
         <div className="flex items-center gap-4">
-          <a
+          <Link
             href="/#contact"
             className="flex items-center gap-2 border border-blue-500 rounded-full py-3 px-10 max-[1024px]:hidden"
           >
             <i className="bx bxs-arrow-up-right-stroke"></i>
             <span>Contact</span>
-          </a>
+          </Link>
           <button className="hidden max-[1024px]:flex" onClick={openMenu}>
             <i className="bx bxs-menu-right text-3xl"></i>
           </button>
@@ -82,78 +81,78 @@ const page = (props: Props) => {
           </button>
 
           <li>
-            <a href="/" className="">
+            <Link href="/" className="">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#about" className="">
+            <Link href="/#about" className="">
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#skills" className="">
+            <Link href="/#skills" className="">
               Skills
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#projects" className="">
+            <Link href="/#projects" className="">
               Project
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#blog" className="">
+            <Link href="/#blog" className="">
               Blog
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/#contact" className="">
+            <Link href="/#contact" className="">
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
       <BlogDetail />
       <div className="px-40 p-8 flex bg-black flex-col items-center mt-60 gap-4 max-[1200px]:p-4 max-[600px]:mt-20">
         <div>
-          <a href="" className="text-4xl text-white max-[600px]:text-2xl">
+          <Link href="" className="text-4xl text-white max-[600px]:text-2xl">
             Bhisma <span className="text-blue-500">.</span>
-          </a>
+          </Link>
         </div>
         <div className="flex gap-8 justify-center max-[600px]:grid max-[600px]:grid-cols-3 max-[600px]:gap-4">
-          <a href="/" className="text-lg text-white max-[600px]:text-center">
+          <Link href="/" className="text-lg text-white max-[600px]:text-center">
             Home
-          </a>
-          <a
+          </Link>
+          <Link
             href="/#about"
             className="text-lg text-white max-[600px]:text-center"
           >
             About
-          </a>
-          <a
+          </Link>
+          <Link
             href="/#skills"
             className="text-lg text-white max-[600px]:text-center"
           >
             Skills
-          </a>
-          <a
+          </Link>
+          <Link
             href="/#projects"
             className="text-lg text-white max-[600px]:text-center"
           >
             Project
-          </a>
-          <a
+          </Link>
+          <Link
             href="/#blogs"
             className="text-lg text-white max-[600px]:text-center"
           >
             Blog
-          </a>
-          <a
+          </Link>
+          <Link
             href="/#contact"
             className="text-lg text-white max-[600px]:text-center"
           >
             Contact
-          </a>
+          </Link>
         </div>
         <div>
           <h1 className="text-lg text-white text-center">
@@ -179,5 +178,4 @@ const page = (props: Props) => {
     </div>
   );
 };
-
-export default page;
+export default Page;

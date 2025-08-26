@@ -2,9 +2,7 @@ import { projects } from "@/assets/assets";
 import Image from "next/image";
 import React from "react";
 
-type Props = {};
-
-const Project = (props: Props) => {
+const Project = () => {
   return (
     <div id="projects" className="scroll-mt-[180px] px-40 flex flex-col mt-60 gap-10 max-[1200px]:p-4 max-[600px]:mt-20">
       <div className="">
@@ -46,6 +44,7 @@ const Project = (props: Props) => {
             <div className="flex items-center gap-4 mt-auto">
               <a
                 href={code}
+                target="_blank"
                 className="flex items-center gap-2 py-2 px-4 bg-black rounded-full text-white"
               >
                 <i className="bxl bx-github"></i>
@@ -53,6 +52,7 @@ const Project = (props: Props) => {
               </a>
               <a
                 href={demo}
+                target="_blank"
                 className="flex items-center gap-2 py-2 px-4 bg-blue-500 rounded-full text-white"
               >
                 <i className="bx bx-play-circle"></i>

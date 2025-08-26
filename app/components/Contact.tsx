@@ -1,9 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-type Props = {};
-
-const Contact = (props: Props) => {
+const Contact = () => {
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
