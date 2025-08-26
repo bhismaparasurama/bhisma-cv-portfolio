@@ -47,7 +47,7 @@ export default function BlogList() {
           href="/#blogs"
           className="flex items-center gap-2 py-3 px-6 bg-blue-500 rounded-full text-white"
         >
-          <i className='bx bx-arrow-left-stroke'></i> 
+          <i className="bx bx-arrow-left-stroke"></i>
           Back
         </Link>
       </div>
@@ -70,7 +70,10 @@ export default function BlogList() {
       </div>
       <div className="grid grid-cols-4 gap-10 max-[1600px]:grid-cols-2 max-[700px]:grid-cols-1">
         {filteredBlogs.map((blog) => (
-          <div className="p-8 shadow-[0_4px_20px_rgba(0_0,_0,_0.09)] rounded-3xl flex flex-col gap-4 max-[700px]:p-4">
+          <div
+            key={blog.id}
+            className="p-8 shadow-[0_4px_20px_rgba(0_0,_0,_0.09)] rounded-3xl flex flex-col gap-4 max-[700px]:p-4"
+          >
             {blog.image && (
               <Image
                 src={blog.image}
