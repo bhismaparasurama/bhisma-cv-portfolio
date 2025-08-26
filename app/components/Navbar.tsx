@@ -1,6 +1,4 @@
 "use client";
-import { assets } from "@/assets/assets";
-import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
 type Props = {};

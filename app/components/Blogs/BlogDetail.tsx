@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import Navbar from "@/app/components/Navbar";
-import { div } from "motion/react-client";
 
 interface Blog {
   id: number;
