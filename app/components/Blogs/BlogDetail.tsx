@@ -29,7 +29,7 @@ export default function BlogDetail() {
           setBlog(currentBlog);
 
           // fetch semua blog untuk cari related
-          fetch("http://127.0.0.1:8000/api/blogs")
+          fetch("https://blog-filament-production.up.railway.app/api/blogs")
             .then((res) => res.json())
             .then((all) => {
               const relatedBlogs = all.data.filter(
