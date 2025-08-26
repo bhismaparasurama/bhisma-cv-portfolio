@@ -99,16 +99,19 @@ export default function BlogDetail() {
                     />
                   )}
                   <p className="py-2 px-4 bg-blue-500 text-white rounded-full w-fit flex items-center gap-2">
-                    <i className="bx bx-grid-circle-diagonal-left"></i>
-                    {item.category}
+                    <i
+                      key="icon-category"
+                      className="bx bx-grid-circle-diagonal-left"
+                    ></i>
+                    <span key="label-category">{item.category}</span>
                   </p>
                   <h1 className="text-lg">{item.title}</h1>
                   <Link
                     href={`/blogs/${item.id}`}
                     className="flex items-center gap-2 py-2 px-4 bg-black text-white rounded-full w-fit mt-auto"
                   >
-                    <i className="bx bx-arrow-in-up-right-circle"></i>
-                    Read Blog
+                    <i key="icon-read" className="bx bx-arrow-in-up-right-circle"></i>
+                    <span key="label-read">Read Blog</span>
                   </Link>
                 </div>
               ))}
