@@ -22,7 +22,7 @@ export default function BlogDetail() {
   useEffect(() => {
     if (id) {
       // fetch detail blog
-      fetch(`http://127.0.0.1:8000/api/blogs/${id}`)
+      fetch(`https://blog-filament-production.up.railway.app/api/blogs/${id}`)
         .then((res) => res.json())
         .then((data) => {
           const currentBlog = data.data;

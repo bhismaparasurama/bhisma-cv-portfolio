@@ -17,7 +17,7 @@ export default function BlogList() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/blogs")
+    fetch("https://blog-filament-production.up.railway.app/api/blogs")
       .then((res) => res.json())
       .then((data) => {
         console.log("API response:", data); // cek struktur di console
