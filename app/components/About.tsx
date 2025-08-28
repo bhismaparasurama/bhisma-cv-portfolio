@@ -59,7 +59,7 @@ const About = () => {
             websites. With solid experience in React, Next.js, and Tailwind CSS,
             I specialize in transforming ideas into seamless digital experiences
             that balance design and functionality. My focus is on building
-            accessible, high-performance applications that not only look great
+            accessible, high performance applications that not only look great
             but also deliver real value for users. I pay close attention to
             details, ensuring every project I work on meets professional
             standards while maintaining clean and maintainable code. Beyond
