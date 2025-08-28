@@ -86,7 +86,7 @@ const Contact = () => {
               Currently learning advanced NextJs
             </span>
             <span className="text-gray-900 max-[500px]:text-sm">
-              Exploring UI/UX design
+              Exploring Backend Developer
             </span>
           </div>
           <div className="flex flex-col gap-4 w-full">

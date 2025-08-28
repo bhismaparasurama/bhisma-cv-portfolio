@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-const roles = ["Frontend Developer", "Backend Developer", "UI/UX Designer"];
+const roles = ["Frontend Developer", "Backend Developer"];
 
 const Hero = () => {
   const [index, setIndex] = useState(0);
